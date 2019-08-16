@@ -3,14 +3,14 @@ package game
 import (
   "log"
   "github.com/hajimehoshi/ebiten"
-  // "github.com/hajimehoshi/ebiten/ebitenutil"
+  "github.com/hajimehoshi/ebiten/ebitenutil"
 )
 
 func updated(screen *ebiten.Image) error {
   if ebiten.IsDrawingSkipped() {
     return nil
   }
-  // ebitenutil.DebugPrint(screen, "Hello, World!")
+  ebitenutil.DebugPrint(screen, "Hello, World!")
   return nil
 }
 
