@@ -5,5 +5,3 @@ ENV APP_DIR /SampleGoTestProject
 RUN mkdir -p $APP_DIR
 
 WORKDIR ${APP_DIR}
-
-RUN ["go", "mod", "init", "example.com/m"]
