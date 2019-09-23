@@ -1,7 +1,14 @@
-FROM golang:1.12.9-alpine3.9
+FROM golang:1.12.9
 
-ENV APP_DIR /SampleGoTestProject
+WORKDIR /src/app
 
-RUN mkdir -p $APP_DIR
+RUN addgroup --system projects && adduser --system projects --ingroup projects
 
-WORKDIR ${APP_DIR}
+RUN chown -R projects:projects /src/app
+
+USER projects
+
+COPY . .
+
+RUN go get -d -v ./...
+
